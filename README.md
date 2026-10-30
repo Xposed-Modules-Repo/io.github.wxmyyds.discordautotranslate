@@ -2,60 +2,88 @@
 
 # Discord AutoTranslate
 
-**Discord 消息自动翻译（英文 → 简体中文）的 LSPosed 模块**
+**Discord 多语言消息自动翻译模块 | Multilingual Discord message translation**
 
-基于 [LibXposed API 102](https://github.com/libxposed/api)（现代 Xposed API，
-不使用旧的 `de.robv.android.xposed` API）。
+基于 [LibXposed API 102](https://github.com/libxposed/api)。
 
-源码与构建：[wxmyyds/DiscordAutoTranslate](https://github.com/wxmyyds/DiscordAutoTranslate)
+[源码与构建 Source](https://github.com/wxmyyds/DiscordAutoTranslate) · [Releases](https://github.com/Xposed-Modules-Repo/io.github.wxmyyds.discordautotranslate/releases)
+
+[简体中文](#简体中文) | [English](#english)
 
 </div>
 
 ---
 
-## 功能
+## 简体中文
 
-- **自动翻译**：Discord 消息英文 → 简体中文，翻译完成自动替换正文
-- **保留 Markdown**：标题 / 列表 / 提及 / 表情 / 代码等结构完整保留
-- **行内翻译图标**：翻译中 / 成功 / 失败三态，点击切换原文 / 译文，失败可重试
-- **回复引用**：被引用消息的译文同步显示在回复预览中
-- **Embed 与投票**：富 Embed（标题 / 描述 / 字段 / 原生帖子预览）与投票卡片可翻译
-- **编辑重译**：消息被编辑后自动重新翻译
-- **供应商协议**：支持 OpenAI-Compatible / OpenAI-Responses / Anthropic Messages，
-  以及流式（SSE）响应
-- **独立设置界面**：配置检查 / 测试连接 / 测试翻译
-- **隐私友好**：消息正文与译文不写入日志，API 密钥仅保存在本机
+Discord AutoTranslate 是一个 LSPosed 模块，可将 Discord 消息翻译为设置的目标语言。
 
-## 系统要求
+### 功能
 
-- Android 8.0+（API 26+）
-- 已 Root 且安装 [LSPosed](https://github.com/LSPosed/LSPosed)（支持 API 102 的版本）
-- Discord **340.13 Stable**（`versionCode` 340013）。其他版本不承诺兼容，
-  模块启动时会比对版本并打印警告。
+- 自动翻译多语言消息，并按原位置替换正文
+- 保留 Markdown 标题、列表、提及、表情和代码等结构
+- 行内图标显示翻译状态，可切换原文与译文；失败时可重试
+- 支持回复引用、编辑后重译、富 Embed 和投票卡片
+- 支持 OpenAI-Compatible、OpenAI Responses、Anthropic Messages 协议；部分协议可使用流式响应
+- 提供设置页、配置检查、测试连接和测试翻译
 
-## 安装与激活
+### 系统要求
 
-1. 在本仓库 [Releases](https://github.com/Xposed-Modules-Repo/io.github.wxmyyds.discordautotranslate/releases)
-   下载 APK 并安装（或到 [源码仓库 Releases](https://github.com/wxmyyds/DiscordAutoTranslate/releases) 下载）。
-2. 打开 LSPosed，启用 **Discord AutoTranslate**，作用域勾选 `com.discord`。
-3. 强制停止并重启 Discord。
-4. 打开模块的设置界面，填写 API URL、密钥、模型等配置即可开始翻译。
+- Android 8.0 或更新版本（API 26+）
+- 支持 LibXposed API 102 的 LSPosed
+- Discord 340.13 Stable（`versionCode` 340013）；其他版本不保证兼容
 
-> 需要支持 API 102 的 LSPosed 版本。
+### 安装与配置
 
-## 使用说明
+1. 从本仓库 [Releases](https://github.com/Xposed-Modules-Repo/io.github.wxmyyds.discordautotranslate/releases) 下载并安装 APK。
+2. 打开模块设置，填写 API URL、密钥和模型并保存。可以在启用 LSPosed 模块前完成配置。
+3. 在 LSPosed 中启用 **Discord AutoTranslate**，并将 `com.discord` 加入作用域。
+4. 强制停止并重启 Discord。
 
-- 翻译默认开启；可在设置界面调整目标语言、供应商协议、系统提示词、并发与超时等参数。
-- 打开模块设置 →「测试连接」可验证 API 配置，「测试翻译」可预览翻译效果。
-- 消息行内图标：翻译中为旋转状态，完成后可点击在原文 / 译文间切换，失败可点击重试。
+模块启用前保存的配置会在 LSPosed service 可用后自动同步。设置页可使用「测试连接」和「测试翻译」检查配置。
 
-## 隐私
+### 隐私
 
-启用后消息正文会发送到你在设置中配置的第三方翻译服务。
-API 密钥仅保存在本机（LSPosed remote preferences），不会写入日志。
-消息正文与译文始终不会写入日志；详细日志开关只影响诊断信息的详细程度。
+消息正文会发送到你配置的翻译服务；消息正文与译文不会写入模块日志。API 密钥保存在本机私有配置中，并同步至 LSPosed remote preferences。
 
-## 免责声明
+### 免责声明
 
-本项目与 Discord Inc. 无关联。Discord 为 Discord Inc. 的商标。
-使用本模块可能违反 Discord 服务条款，请自行评估风险。
+本项目与 Discord Inc. 无关联。Discord 为 Discord Inc. 的商标。使用本模块可能违反 Discord 服务条款，请自行评估风险。
+
+---
+
+## English
+
+Discord AutoTranslate is an LSPosed module that translates Discord messages into your selected target language.
+
+### Features
+
+- Automatically translate multilingual messages and replace their text in place
+- Preserve Markdown structures such as headings, lists, mentions, emoji, and code
+- Inline status icon with original/translation toggle and retry on failure
+- Translate reply previews, edited messages, rich embeds, and poll cards
+- Supports OpenAI-Compatible, OpenAI Responses, and Anthropic Messages APIs; streaming is available for supported protocols
+- Includes a settings screen, configuration checks, connection testing, and translation testing
+
+### Requirements
+
+- Android 8.0 or later (API 26+)
+- LSPosed with LibXposed API 102 support
+- Discord 340.13 Stable (`versionCode` 340013); other versions are not guaranteed to work
+
+### Installation and Setup
+
+1. Download and install the APK from this repository's [Releases](https://github.com/Xposed-Modules-Repo/io.github.wxmyyds.discordautotranslate/releases).
+2. Open the module settings, enter your API URL, key, and model, then save. You can do this before enabling the LSPosed module.
+3. Enable **Discord AutoTranslate** in LSPosed and add `com.discord` to its scope.
+4. Force-stop and restart Discord.
+
+Settings saved before activation are synchronized automatically when the LSPosed service becomes available. Use **Test Connection** and **Test Translation** in the settings screen to verify your configuration.
+
+### Privacy
+
+Message content is sent to your configured translation service. Message content and translations are not written to the module logs. The API key is stored in the app's private storage and synchronized to LSPosed remote preferences.
+
+### Disclaimer
+
+This project is not affiliated with Discord Inc. Discord is a trademark of Discord Inc. Use of this module may violate Discord's Terms of Service; use it at your own discretion.
