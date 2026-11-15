@@ -22,8 +22,6 @@
 | Discord 340.13 Stable（versionCode 340013）| [下载 Discord APK](https://1drv.ms/u/c/8ccaf25c5b0de4fb/IQC_FsEpTW9pQYQTZZX4XrKJAUecfhaG98Q7V0cyTK1MIqg?e=QTqag5) |
 | Discord 352.17 Stable（versionCode 352017）| [下载 Discord APK](https://1drv.ms/u/c/8ccaf25c5b0de4fb/IQCbMILHoJWrQYp5eeZrkUTAAT85sbCHsOEhamnOonbWzCg?e=qh9gUL) |
 
-**兼容性说明：** Discord 客户端 APK 与本模块 APK 是两个独立下载。本仓库当前最新发布版本为 **1.0.1**，现有发布信息列出的适配客户端为 Discord 340.13 Stable。虽然上表也提供 Discord 352.17 安装包，但**当前模块 Release 未列出对该客户端的支持，不能保证兼容**。请以模块 Release 信息为准。
-
 ### 功能概览
 
 - 翻译消息正文，并提供原文／译文切换；失败时可手动重试。
@@ -57,8 +55,6 @@ Discord AutoTranslate is an LSPosed module for Discord on Android. It sends tran
 | Module APK | [Latest release in this repository](https://github.com/Xposed-Modules-Repo/io.github.wxmyyds.discordautotranslate/releases/latest) |
 | Discord 340.13 Stable (`versionCode` 340013) | [Download Discord APK](https://1drv.ms/u/c/8ccaf25c5b0de4fb/IQC_FsEpTW9pQYQTZZX4XrKJAUecfhaG98Q7V0cyTK1MIqg?e=QTqag5) |
 | Discord 352.17 Stable (`versionCode` 352017) | [Download Discord APK](https://1drv.ms/u/c/8ccaf25c5b0de4fb/IQCbMILHoJWrQYp5eeZrkUTAAT85sbCHsOEhamnOonbWzCg?e=qh9gUL) |
-
-**Compatibility:** The Discord client APKs and the module APK are separate downloads. The latest release in this repository is **1.0.1**; the compatibility information currently published here lists Discord 340.13 Stable. Although a Discord 352.17 download is provided above, **the current module release does not list support for that client, and compatibility is not guaranteed**. Check this repository's release information before installing.
 
 ### Features
 
